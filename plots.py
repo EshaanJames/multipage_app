@@ -37,7 +37,7 @@ def app(car_df):
 		columns = st.selectbox("Select the column to create the Correlation Heatmap",('carwidth', 'enginesize', 'horsepower'))
 		plt.figure(figsize = (12,6))
 		plt.title(f"Correlation Heatmap for {columns}")
-		sns.heatmap(car_df[columns].corr(), annote = True)
+		sns.heatmap(car_df[columns].corr(), annot = True)
 		st.pyplot()
 		
 		
