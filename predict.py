@@ -16,7 +16,7 @@ def prediction(car_df, carwidth, enginesize, hp, drivewheel_fwd, cc_buick ):
 	lin_reg.fit(X_train, y_train)
 	mod_score = lin_reg.score(X_train, y_train)
 	
-	price = lin_reg.predict([[carwidth, enginesize, hp, drivewheel_fwd, cc_buick]])
+	price = lin_reg.predict([carwidth, enginesize, hp, drivewheel_fwd, cc_buick])
 	price = price[0]
 
 	ytest_predict = lin_reg.predict(X_test)
