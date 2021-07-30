@@ -36,4 +36,4 @@ PAGES = {
 st.sidebar.title("Navigation")
 selection = st.sidebar.radio("Go to", tuple(PAGES.keys()))
 page = PAGES[selection]
-page.app[car_df]
+page.app(car_df)
