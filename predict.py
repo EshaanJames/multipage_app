@@ -44,4 +44,15 @@ def app(car_df):
 		ccb = 0
 	else:
 		ccb  = 1
-		
+	
+	if st.button("Predict"):
+		st.subheader("Prediction results.")
+		price, mod_score, test_r2, test_mae, test_rmse, test_msle =  prediction(car_df, cw, esize, hpower, d_fwd, ccb)
+		st.success(f"Predicted Price of the car is ${int(price)}.")
+		st.info(f"""
+			Accuracy score of the model is {mod_score:.2f}.
+			Squared error = {test_r2:.2f}.
+			Mean absolute error = {test_mae:.2f}
+			Root MEan squared error = {test_rmse:.2f}
+			Mean Squared log error = {test_msle:.2f}
+			""")
